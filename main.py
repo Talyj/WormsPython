@@ -1,19 +1,10 @@
-import pygame
+#!/usr/bin/python3
 
+from game import Game
 
-def main():
-    running = True
-    pygame.init()
-
-    # Create screen
-
-    screen = pygame.display.set_mode((800, 600))
-    # Game Loop
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    game = Game()
+    while not game.end:
+        game.update()
+        game.draw()
+    game.exit()
